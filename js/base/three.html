@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>three</title>
+</head>
+<body>
+    <a>this is three</a>
+    <script>
+        // var hoisting
+        function boo(){
+            if(false){
+                var age = "12";
+        
+            }
+            //undefined
+            console.log(age);
+        }
+        boo();
+        function boo1(){
+            if(false){
+                 daddyage = "42";
+            }
+            var daddyage;
+            //undefined
+            console.log(daddyage);
+        }
+        boo1();
+        function boo3(){
+            mommyage = "32";
+            if(false){
+                mommyage = "32";
+            }
+            var mommyage;
+            //undefined
+            console.log(mommyage);
+        }
+        boo3();
+        // let const not exist hoisting
+        function boo2(){
+            if(false){
+                let nick = "dog";
+            }
+            //Uncaught ReferenceError
+            console.log(nick);
+        }
+        boo2();
+        function boo4(){
+            if(false){
+                const nickname = "cat";
+            }
+            //Uncaught ReferenceError
+            console.log(nickname);
+        }
+        boo4();
+    </script>
+</body>
+</html>
