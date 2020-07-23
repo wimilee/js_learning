@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue v-if</title>
+    <title>Vue v-on</title>
 </head>
 <body>
     <div id="app">
-        <p v-if="seen">现在你能看到我了</p>
-        <button @click="change">按一下</button>
+        <h1>{{message}}</h1>
+        <button v-on:click="reverseMessage">反转消息</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         var app = new Vue({
-            el:"#app",
+            el:'#app',
             data:{
-                seen:true
+                message:'Hello Vue'
             },
             methods:{
-                change:function(){
-                    this.seen=true?false:true
+                reverseMessage:function(){
+                    this.message=this.message.split('').reverse().join('')
                 }
             }
         })
