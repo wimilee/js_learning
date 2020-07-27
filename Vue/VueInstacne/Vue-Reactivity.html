@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-Reactivity</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{foo}}</h1>
+        <button v-on:click="foo = 'unfreeze'">你能改变上面的值吗</button>
+        <button v-on:click="unfreeze">解冻</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var obj = {
+            foo:'freeze'
+        };
+        Object.freeze(obj);
+        var vm = new Vue({
+            el:'#app',
+            data:obj,
+            methods: {
+                unfreeze:function(){
+                    this.foo=JSON.parse(JSON.stringify(this.foo));
+                    foo = 'unfreeze';
+                }
+            },
+        })
+    </script>
+    
+</body>
+</html>

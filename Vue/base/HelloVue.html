@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Bind</title>
+    <title>Hello Vue</title>
 </head>
 <body>
     <div id="app">
-        <span v-bind:title="messsage">
-            放在👆上面看看变化吧
-        </span>
+        <h1>{{message}}</h1>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         var Vue = new Vue({
             el:'#app',
             data:{
-                messsage:'当前时间：'+new Date().toLocaleString()
+                message:'Hello Vue!'
             }
         })
     </script>
