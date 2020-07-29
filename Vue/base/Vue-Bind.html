@@ -10,13 +10,20 @@
         <span v-bind:title="message">
             放在👆上面看看变化吧
         </span>
+        <hr>
+        <a v-bind:href="url">这是Vue.js的官网</a>
+        <!--Dynamic property-->
+        <span v-bind:[attributeName]=""></span>
+        <!--v-bind shorthands-->
+        <a :href="url">再点一下吧</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         var Vue = new Vue({
             el:'#app',
             data:{
-                message:'当前时间：'+new Date().toLocaleString()
+                message:'当前时间：'+new Date().toLocaleString(),
+                url:"https://cn.vuejs.org"
             }
         })
     </script>

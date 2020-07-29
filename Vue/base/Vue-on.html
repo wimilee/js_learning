@@ -9,6 +9,8 @@
     <div id="app">
         <h1>{{message}}</h1>
         <button v-on:click="reverseMessage">反转消息</button>
+        <!--v-on shorthands-->
+        <button @click="reverseMessage">这也是反转消息的按钮</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
