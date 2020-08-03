@@ -8,7 +8,9 @@
 <body>
     <div id="app">
         <p>Original message:"{{message}}"</p>
+        <input v-model="message">
         <p>Computed reversed message:"{{reversedMessage}}"</p>
+        <span>what's the time now "{{Now}}"</span>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -20,6 +22,9 @@
             computed:{
                 reversedMessage:function(){
                  return this.message.split('').reverse().join('')
+                },
+                Now:function(){
+                    return Date.now();
                 }
             }
         })
